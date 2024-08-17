@@ -1,0 +1,13 @@
+.text-editor {
+  width: 100%;
+  min-height: 450px;
+}
+
+.preview {
+  width: 100%;
+  min-height: 450px;
+}
+
+.timeline-input {
+  cursor: not-allowed;
+}

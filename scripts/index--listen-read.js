@@ -178,14 +178,7 @@ const Message = React.forwardRef((props, ref) => {
       </div>
     );
   });
-  // onTransitionEnd={() => {
-  //   if (currentIndex === index) {
-  //     messagesRef.current[index].scrollIntoView({
-  //       behavior: "smooth",
-  //       block: "center",
-  //     });
-  //   }
-  // }}
+
   return (
     <div
       className={props.classList}
@@ -193,8 +186,6 @@ const Message = React.forwardRef((props, ref) => {
       onClick={() => props.onPlayAudio(startTime)}
     >
       <div className="flex flex-wrap gap">{message__PCElements}</div>
-      {/* <p>{ pinyin }</p>
-            <p>{ chinese }</p> */}
       {props.showTranslation && <p className="translation">{english}</p>}
     </div>
   );

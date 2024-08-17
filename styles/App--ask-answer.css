@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+}
+
+.container {
+  min-height: 600px;
+
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+}
+.message {
+  padding: 1em 1.5em;
+  /* margin-top: 1rem; */
+  transition: background-color 150ms ease-in-out;
+  /* border: 1px solid red; */
+}
+
+.message:hover {
+  background-color: antiquewhite;
+}
+
+.word {
+  font-size: 1rem;
+  text-align: left;
+  margin-bottom: 0.25em;
+}
+
+.word--small {
+  font-size: 0.8rem;
+  color: gray;
+  opacity: 0.5;
+  text-align: left;
+  margin-bottom: 0.5em;
+}
+
+.word--pinyin {
+  font-size: 0.75em;
+  color: red;
+  text-align: center;
+}
+
+.word--chinese {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.translation {
+  color: blue;
+}
+
+.reveal-translation-btn {
+  background-color: hsla(0, 0%, 0%, 0);
+  border: none;
+  color: black;
+  opacity: 0.5;
+  margin-top: 1em;
+}
+
+.load-new-message-btn {
+  padding: 0.5em 1.5em;
+
+  /* transition: translate 10s ease-in; */
+}
+
+/* UTILITY CLASSES*/
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.px {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.mt-auto {
+  margin-top: auto;
+}
+
+.gap {
+  gap: 0.75em;
+}
