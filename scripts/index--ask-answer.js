@@ -1,158 +1,200 @@
 const collection = `{
-    "Chapter 2.mp3": [
-    {
-        "id": 0,
-        "pinyin": "Dì èr kè|:|Nǐ|shì|nǎ|guórén|?",
-        "chinese": "第二课|:|你|是|哪|国人|？",
-        "english": "Lesson Two: What nationality are you?",
-        "timeRange": [
-            0,
-            1.613392
-        ],
-        "type": 0
-    },
-    {
-        "id": 1,
-        "pinyin": "“dīng dōng”|—|mén líng|xiǎng|le|.",
-        "chinese": "“叮咚”|—|门铃|响|了|。",
-        "english": "“Ding-dong” - the doorbell rings",
-        "timeRange": [
-            1.613392,
-            5.252967
-        ],
-        "type": 0
-    },
-    {
-        "id": 2,
-        "pinyin": "Tián Zhōng|:|Nǐmen|hǎo.",
-        "chinese": "田中|:|你们|好。",
-        "english": "Tanaka: Hello",
-        "timeRange": [
-            5.252967,
-            7.561579
-        ],
-        "type": 0
-    },
-    {
-        "id": 3,
-        "pinyin": "Lǐ Míng|:|Lái,|wǒ|gěi|nǐmen|jièshào|——|Dàwèi,|zhè shì|Tián Zhōng|,|tā|shì|wǒ de|péngyǒu,| yě shì|wǒmen|dàxué|de|xuéshēng. |Tián Zhōng,| zhè shì|Dàwèi,| cóng| Yīngguó| lái.",
-        "chinese": "李明|:|来|我|给|你们|介绍|——|大卫|这是|田中|，|他|是|我的|朋友，|也是|我们|大学|的|学生。|田中，|这 是|大卫，|从|英国|来。",
-        "english": "Li Ming: Come, let me introduce you. David, this is Tanaka. He is my friend and is also a student at our University. Tanaka, this is David from England",
-        "timeRange": [
-            7.431481,
-            21.696636
-        ],
-        "type": 0
-    },
-    {
-        "id": 4,
-        "pinyin": "Dàwèi|:| Nǐ hǎo,| Tián Zhōng|, |hěn| gāoxìng| rènshi| nǐ.",
-        "chinese": "大卫|:| 你好，|田中|，|很|高兴|认识|你。",
-        "english": "David: Hello Tanaka, it’s very nice to meet you",
-        "timeRange": [
-            21.696636,
-            25.603844
-        ],
-        "type": 0
-    },
-    {
-        "id": 5,
-        "pinyin": "Tián Zhōng|:| Nǐ hǎo,| Dàwèi,| wǒ| yě| hěn| gāoxìng| rènshi| nǐ.| Nǐ| shì| Yīngguó rén| ma?",
-        "chinese": "田中|:| 你好，|大卫，|我|也|很|高兴|认识|你。|你|是|英国人|吗?",
-        "english": "Tanaka: Hello David, I’m glad to meet you too. Are you English?",
-        "timeRange": [
-            25.504074,
-            31.808575
-        ],
-        "type": 0
-    },
-    {
-        "id": 6,
-        "pinyin": "Dàwèi|:|Duì|,|wǒ|shì|Yīngguó|rén|.|Nǐ|shì|nǎ|guó|rén|?",
-        "chinese": "大卫|:|对|，|我|是|英国|人|。|你|是|哪|国|人|？",
-        "english": "David: Yes, I’m English. What nationality are you?",
-        "timeRange": [
-            31.808575,
-            36.762728
-        ],
-        "type": 0
-    },
-    {
-        "id": 7,
-        "pinyin": "Tián Zhōng|:|Wǒ|cóng|Rìběn|lái|,|shì|Rìběn|rén|.|Wǒ|zhù|zài|Běijīng|liǎng|nián|le|.",
-        "chinese": "田中|:|我|从|日本|来|，|是|日本|人|。|我|住|在|北京|两|年|了|。",
-        "english": "Tanaka: I’m from Japan, I’m Japanese. I’ve lived in Beijing for two years now",
-        "timeRange": [
-            36.762728,
-            43.026992
-        ],
-        "type": 0
-    },
-    {
-        "id": 8,
-        "pinyin": "Lǐ Míng|:|Dàwèi|,|jīntiān|wǎnshàng|,|wǒmen|sān|gè|rén|yīqǐ|chīfàn|,|hǎo|ma|?",
-        "chinese": "李明|:|大卫|，|今天|晚上|，|我们|三|个|人|一起|吃饭|，|好|吗|？",
-        "english": "Li Ming: David, let’s have dinner together tonight, the three of us, yeah?",
-        "timeRange": [
-            43.026992,
-            49.548847
-        ],
-        "type": 0
-    },
-    {
-        "id": 9,
-        "pinyin": "Dàwèi|:|Hǎo|!",
-        "chinese": "大卫|:|好|！",
-        "english": "David: Yeah!",
-        "timeRange": [
-            49.548847,
-            50.599184
-        ],
-        "type": 0
-    }
-]}`;
-
+  "chapter-2-qa" : [
+  {
+    "id": 0,
+    "timeline": [
+      0,
+      3.459
+    ],
+    "ipa": "Dì|èr|kè|:|tīng|hé|huídá",
+    "targetLang": "第|二|课|:|听|和|回答",
+    "translationLang": "Lesson 2: Listen and Answer",
+    "img": "img",
+    "type": "paragraph"
+  },
+  {
+    "id": 1,
+    "timeline": [
+      3.459,
+      6.154
+    ],
+    "ipa": "“Dīng dōng”| — |Ménlíng|xiǎngle|.",
+    "targetLang": "“叮咚”| — |门铃|响了|。",
+    "translationLang": "“Ding dong” — The doorbell rang.",
+    "img": "img",
+    "type": "paragraph"
+  },
+  {
+    "id": 2,
+    "timeline": [
+      6.154,
+      8.204
+    ],
+    "ipa": "Ménlíng|xiǎngle|ma|?",
+    "targetLang": "门铃|响了|吗|？",
+    "translationLang": "Did the doorbell ring?",
+    "img": "img",
+    "type": "question"
+  },
+  {
+    "id": 3,
+    "timeline": [
+      8.204,
+      10.874
+    ],
+    "ipa": "Duì|,|ménlíng|xiǎngle|.",
+    "targetLang": "对|，|门铃|响了|。",
+    "translationLang": "Yes, the doorbell rang.",
+    "img": "img",
+    "type": "answer"
+  },
+  {
+    "id": 4,
+    "timeline": [
+      10.874,
+      14.350999999999999
+    ],
+    "ipa": "Ménlíng|xiǎngle|háishì|diànhuà|xiǎngle|?",
+    "targetLang": "门铃|响了|还是|电话|响了|？",
+    "translationLang": "Did the doorbell ring or did the telephone ring?",
+    "img": "img",
+    "type": "question"
+  },
+  {
+    "id": 5,
+    "timeline": [
+      14.350999999999999,
+      16.21
+    ],
+    "ipa": "Ménlíng|xiǎngle|.",
+    "targetLang": "门铃|响了|。",
+    "translationLang": "The doorbell rang.",
+    "img": "img",
+    "type": "answer"
+  },
+  {
+    "id": 6,
+    "timeline": [
+      16.21,
+      18.238
+    ],
+    "ipa": "Shénme|xiǎngle|?",
+    "targetLang": "什么|响了|？",
+    "translationLang": "What rang?",
+    "img": "img",
+    "type": "question"
+  },
+  {
+    "id": 7,
+    "timeline": [
+      18.238,
+      20.249
+    ],
+    "ipa": "Ménlíng|xiǎngle|.",
+    "targetLang": "门铃|响了|。",
+    "translationLang": "The doorbell rang.",
+    "img": "img",
+    "type": "answer"
+  },
+  {
+    "id": 8,
+    "timeline": [
+      20.249,
+      22.299
+    ],
+    "ipa": "Ménlíng|huàile|ma|?",
+    "targetLang": "门铃|坏了|吗|？",
+    "translationLang": "Was the doorbell broken?",
+    "img": "img",
+    "type": "question"
+  },
+  {
+    "id": 9,
+    "timeline": [
+      22.299,
+      27.043
+    ],
+    "ipa": "Bù|,|ménlíng|méi|huài|.|Ménlíng|xiǎngle|!",
+    "targetLang": "不|，|门铃|没|坏|。|门铃|响了|！",
+    "translationLang": "No, the doorbell wasn’t broken. The doorbell rang!",
+    "img": "img",
+    "type": "answer"
+  },
+  {
+    "id": 10,
+    "timeline": [
+      27.043,
+      29.083
+    ],
+    "ipa": "Shéi|ànle|ménlíng|?",
+    "targetLang": "谁|按了|门铃|？",
+    "translationLang": "Who rang the doorbell?",
+    "img": "img",
+    "type": "question"
+  },
+  {
+    "id": 11,
+    "timeline": [
+      29.083,
+      31.3
+    ],
+    "ipa": "Shì|Tián Zhōng|àn|de|.",
+    "targetLang": "是|田中|按|的|。",
+    "translationLang": "It was Tanaka who rang the doorbell.",
+    "img": "img",
+    "type": "answer"
+  },
+  {
+    "id": 12,
+    "timeline": [
+      31.3,
+      33.923
+    ],
+    "ipa": "Ménlíng|wèishéme|xiǎngle|?",
+    "targetLang": "门铃|为什么|响了|？",
+    "translationLang": "Why did the doorbell ring?",
+    "img": "img",
+    "type": "question"
+  },
+  {
+    "id": 13,
+    "timeline": [
+      33.923,
+      36.696
+    ],
+    "ipa": "Yīnwèi|Tián Zhōng|ànle|ménlíng|.",
+    "targetLang": "因为|田中|按了|门铃|。",
+    "translationLang": "Because Tanaka rang the doorbell.",
+    "img": "img",
+    "type": "answer"
+  }
+]
+}`;
 const Message = React.forwardRef(function (props, ref) {
-  // console.log(ref);
-
-  // console.log(props.message);
-  //   {
-  //     "message": {
-  //         "id": 0,
-  //         "pinyin": "Dì èr kè|:|Nǐ|shì|nǎ|guórén|?",
-  //         "chinese": "第二课|:|你|是|哪|国人|？",
-  //         "english": "Lesson Two: What nationality are you?",
-  //         "timeRange": [
-  //             0,
-  //             1.613392
-  //         ],
-  //         "type": 0
-  //     }
-  // }
   const [revealTranslation, setRevealTranslation] = React.useState(false);
-  const { id, pinyin, chinese, english, timeRange } = props.message;
-  const [startTime, endTime] = timeRange;
+  const { id, ipa, targetLang, translationLang, timeline } = props.message;
+  const [startTime, endTime] = timeline;
 
-  const pinyinArr = pinyin.split("|");
-  const chineseArr = chinese.split("|");
+  const ipaArr = ipa.split("|");
+  const targetLangArr = targetLang.split("|");
 
-  const message__PCElements = pinyinArr.map((pinyin, index) => {
+  const message__PCElements = ipaArr.map((ipa, index) => {
     return (
       <div className="word" key={index}>
-        <div className="word--pinyin">{pinyin}</div>
-        <div className="word--chinese">{chineseArr[index]}</div>
+        <div className="word--pinyin">{ipa}</div>
+        <div className="word--chinese">{targetLangArr[index]}</div>
       </div>
     );
   });
 
-  const message__PCElements_2 = pinyinArr.slice(2).map((pinyin, index) => {
-    return (
-      <div className="word" key={index}>
-        <div className="word--pinyin">{pinyin}</div>
-        <div className="word--chinese">{chineseArr[index + 2]}</div>
-      </div>
-    );
-  });
+  // const message__PCElements_2 = ipaArr.slice(2).map((ipa, index) => {
+  //   return (
+  //     <div className="word" key={index}>
+  //       <div className="word--pinyin">{ipa}</div>
+  //       <div className="word--chinese">{targetLangArr[index + 2]}</div>
+  //     </div>
+  //   );
+  // });
 
   function handleRevealTranslation(e) {
     e.stopPropagation();
@@ -165,16 +207,16 @@ const Message = React.forwardRef(function (props, ref) {
       ref={ref}
       onClick={() => props.handleReplayAudio(startTime, endTime)}
     >
-      {pinyinArr.includes(":") ? (
+      {/* {ipaArr.includes(":") ? (
         <div>
           <div className="word--small">
-            {pinyinArr[0]} | {chineseArr[0]}:
+            {ipaArr[0]} | {targetLangArr[0]}:
           </div>
           <div className="flex flex-wrap gap">{message__PCElements_2}</div>
         </div>
-      ) : (
-        <div className="flex flex-wrap gap">{message__PCElements}</div>
-      )}
+      ) : ( */}
+      <div className="flex flex-wrap gap">{message__PCElements}</div>
+      {/* )} */}
       <div>
         <button
           className="reveal-translation-btn"
@@ -182,7 +224,7 @@ const Message = React.forwardRef(function (props, ref) {
         >
           {revealTranslation ? "Hide translation" : "Show translation"}
         </button>
-        {revealTranslation && <p className="translation">{english}</p>}
+        {revealTranslation && <p className="translation">{translationLang}</p>}
       </div>
     </div>
   );
@@ -232,8 +274,8 @@ function Conversation(props) {
       return [...prevConversation, props.messages[currentIndex]];
     });
     props.handlePlayAudio(
-      props.messages[currentIndex].timeRange[0],
-      props.messages[currentIndex].timeRange[1]
+      props.messages[currentIndex].timeline[0],
+      props.messages[currentIndex].timeline[1]
     );
     setCurrentIndex((prev) => prev + 1);
 
@@ -275,6 +317,7 @@ function AudioPlayer(props) {
   const audioRef = React.useRef(null);
 
   function handlePlayAudio(startTime, endTime) {
+    audioRef.current.playbackRate = 0.75;
     audioRef.current.currentTime = startTime;
     setEndTime(endTime);
     audioRef.current.play();
@@ -291,7 +334,7 @@ function AudioPlayer(props) {
         <source src={props.src} type="audio/mp3" />
       </audio>
       <Conversation
-        messages={JSON.parse(collection)["Chapter 2.mp3"]}
+        messages={JSON.parse(collection)["chapter-2-qa"]}
         handlePlayAudio={handlePlayAudio}
       />
     </div>
@@ -299,11 +342,12 @@ function AudioPlayer(props) {
 }
 
 function App() {
+  // console.log(JSON.parse(collection)["Chapter 2.mp3"]);
   return (
     <>
       {/* <AudioPlayer audioFile={audioFile} /> */}
       {/* It's not Chapter 2.mp3, but Chapter 2 - Conversation.mp3 */}
-      <AudioPlayer src="./Chapter 2.mp3" />
+      <AudioPlayer src="./chapter-2-qa.mp3" />
     </>
   );
 }

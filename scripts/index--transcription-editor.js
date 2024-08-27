@@ -1,11 +1,13 @@
 function Preview(props) {
-  function handleChange() {
-    // console.log("handleChange");
-  }
+  // function handleChange() {
+  //   // console.log("handleChange");
+  // }
 
   function parseText(text) {
     if (!text) return JSON.stringify({});
+
     const result = [];
+
     let blocks = text.trim().split("\n\n");
 
     blocks.forEach((block, index) => {
@@ -19,7 +21,6 @@ function Preview(props) {
       const [start, end] = timeline;
       const startTime = start.replace(/[\[\]]/g, "");
       const endTime = end.replace(/[\[\]]/g, "");
-      // console.log(`['${startTime}', '${endTime}']`);
 
       // convert string timeline '00:25.517' to seconds
       function timeToSeconds(timeInString) {
@@ -28,9 +29,7 @@ function Preview(props) {
         const [sec, millis] = seconds.split(".");
 
         return Number(
-          parseInt(minutes) * 60 +
-            parseInt(sec) +
-            (parseFloat(millis) / 1000).toFixed(6)
+          parseInt(minutes) * 60 + parseInt(sec) + parseFloat(millis) / 1000
         );
       }
 
@@ -38,16 +37,58 @@ function Preview(props) {
       const ipa = lines[2].trim();
       const targetLang = lines[3].trim();
       const translationLang = lines[4].trim();
-      const type = lines[5].trim().slice(1);
 
-      result.push({
-        id: id,
-        timeline: [timeToSeconds(startTime), timeToSeconds(endTime)],
-        ipa: ipa,
-        targetLang: targetLang,
-        translationLang: translationLang,
-        type: type,
-      });
+      // extract img, and metadata
+      const img = lines[5].trim().split("--");
+      let imgSrc, imgAlt;
+      if (img.length > 1) {
+        [imgSrc, imgAlt] = img;
+      } else {
+        [imgSrc, imgAlt] = ["", ""];
+      }
+
+      const info = lines[6].trim().split("--");
+      const [type, avatarImg, targetLangName, ipaName, bg, text] = info;
+
+      if (type === "dialogue") {
+        result.push({
+          id: id,
+          type: type,
+          speakerInfo: {
+            avatar: avatarImg,
+            ipaName: ipaName,
+            targetLangName: targetLangName,
+          },
+          timeline: [timeToSeconds(startTime), timeToSeconds(endTime)],
+          text: {
+            ipaText: ipa,
+            targetLangText: targetLang,
+            translationText: translationLang,
+          },
+          img: {
+            src: imgSrc,
+            alt: imgAlt,
+          },
+          colors: [bg, text],
+        });
+      } else {
+        result.push({
+          id: id,
+          type: type,
+          speakerInfo: null,
+          timeline: [timeToSeconds(startTime), timeToSeconds(endTime)],
+          text: {
+            ipaText: ipa,
+            targetLangText: targetLang,
+            translationText: translationLang,
+          },
+          img: {
+            src: imgSrc,
+            alt: imgAlt,
+          },
+          colors: null,
+        });
+      }
     });
 
     return JSON.stringify(result, null, 4);
@@ -146,13 +187,9 @@ function AudioPlayer(props) {
 }
 
 function App() {
-  // const [formData, setFormData] = React.useState(
-  //   JSON.parse(
-  //     localStorage.getItem("Chapter 2.mp3") || { textEditorContent: `` }
-  //   )
-  // );
   const [formData, setFormData] = React.useState({ textEditorContent: `` });
   const [fileName, setFileName] = React.useState("");
+  const [revealPreview, setRevealPreview] = React.useState(false);
   function handleChange(e) {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -162,25 +199,33 @@ function App() {
     setFileName(fileName);
 
     setFormData(
-      JSON.parse(localStorage.getItem(fileName)) || {
-        textEditorContent: `👇 Start writing...`,
+      JSON.parse(localStorage.getItem(fileName, "")) || {
+        textEditorContent: ``,
       }
     );
   }
-  console.log(JSON.parse(localStorage.getItem("Chapter 2")));
+  console.log(localStorage.getItem(fileName.replace(/\.mp3/g, "")));
   React.useEffect(
     function () {
       localStorage.setItem(fileName, JSON.stringify(formData));
+      setRevealPreview(false);
     },
     [formData]
   );
   return (
     <>
-      <AudioPlayer handleLoadText={handleLoadText} />
+      <div style={{ marginTop: "4em" }}>
+        <AudioPlayer handleLoadText={handleLoadText} />
+      </div>
       <div className="form">
         <TextEditor formData={formData} handleChange={handleChange} />
+        <button onClick={() => setRevealPreview((prev) => !prev)}>
+          Parse Text
+        </button>
         <div>
-          <Preview output={formData.textEditorContent} fileName={fileName} />
+          {revealPreview && (
+            <Preview output={formData.textEditorContent} fileName={fileName} />
+          )}
         </div>
       </div>
     </>
